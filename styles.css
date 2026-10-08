@@ -1,0 +1,183 @@
+/* ===== Default styles ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  color: #2D3748;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+}
+
+/* ===== CSS Grid layout for the whole page ===== */
+.container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header  header"
+    "sidebar main"
+    "footer  footer";
+  gap: 25px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px 30px;
+}
+
+/* ===== Header (Flexbox centered) ===== */
+header {
+  grid-area: header;
+  background-color: #3C8527;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px 20px 30px;
+  margin: 0 -30px;   /* stretch across full width */
+}
+
+header h1 {
+  font-size: 39px;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  margin: 15px 0 8px;
+}
+
+header p {
+  margin: 0;
+  font-style: italic;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  border: 4px solid #FFFFFF;
+  object-fit: cover;
+}
+
+/* ===== Main content ===== */
+main {
+  grid-area: main;
+  border-left: 1px solid #E2E8F0;
+  padding-left: 30px;
+}
+
+article {
+  margin-bottom: 40px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+article:last-child {
+  border-bottom: none;
+}
+
+article h2 {
+  font-size: 34px;
+  color: #28651C;
+  margin: 0 0 6px;
+}
+
+.meta {
+  color: #667267;
+  margin: 0 0 18px;
+  font-size: 0.9em;
+}
+
+.post-img-right {
+  float: right;
+  margin: 0 0 12px 20px;
+  width: 260px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.post-img-left {
+  float: left;
+  margin: 0 20px 12px 0;
+  width: 260px;
+  height: auto;
+  border-radius: 6px;
+}
+
+article::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ===== Sidebar ===== */
+aside {
+  grid-area: sidebar;
+}
+
+aside h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 10px;
+}
+
+/* About section */
+.about {
+  background-color: #E2E8F0;
+  padding: 18px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.about h3 {
+  color: #333322;
+  margin-top: 0;
+}
+
+/* Social + Archives headings */
+.social h3,
+.archives h3 {
+  color: #28651C;
+  border-bottom: 2px solid #3C8527;
+  padding-bottom: 5px;
+}
+
+.social,
+.archives {
+  margin-bottom: 30px;
+}
+
+.social ul,
+.archives ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.social li,
+.archives li {
+  margin-bottom: 6px;
+}
+
+.social a,
+.archives a {
+  color: #2879B8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.social a:hover,
+.archives a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+footer {
+  grid-area: footer;
+  background-color: #28651C;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px;
+  margin: 0 -30px -30px;
+}
